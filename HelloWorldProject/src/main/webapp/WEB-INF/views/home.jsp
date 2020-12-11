@@ -11,8 +11,8 @@
 
 서버로부터 받은 메시지 : ${resultMsg}
 
-<form action="/test">
-	<input type="button" name="postTestBtn" value="POST MAPPING TEST">
+<form action="/postTest", method="post">
+	<input type="submit" name="postTestBtn" value="POST MAPPING TEST">
 </form>
 </body>
 </html>

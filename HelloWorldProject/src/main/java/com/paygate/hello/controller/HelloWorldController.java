@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +23,7 @@ public class HelloWorldController {
 	public Map<String, Object> list(@PathVariable String id) {
 		Map<String, Object> list = new HashMap<>();
 		logger.info("id : {}", id);
+		
 		list.put("id", id);
 		list.put("pw", "test123");
 		list.put("location", "SEOUL");
@@ -33,12 +35,25 @@ public class HelloWorldController {
 	public String test(@PathVariable String msg) {
 		logger.info("msg : {}", msg);
 		
-		return "Hello world test - msg : " + msg;
+		return "Restful API test success! - msg : " + msg;
 	}
 	
-	@GetMapping("/test")
-	public String test() {
-		String rtnMsg = "Hello world test";
+	@GetMapping("/getTest")
+	public String getTest() {
+		logger.info("Get mapping test success");
+		
+		String rtnMsg = "Get mapping test success!";		
+		
+		return rtnMsg;
+	}
+	
+	@PostMapping("/postTest")
+	public String postTest(Model model) {
+		logger.info("Post mapping test success");
+		
+		String rtnMsg = "Post mapping test success!";
+		
+		model.addAttribute("resultMsg", "rtnMsg");
 		
 		return rtnMsg;
 	}

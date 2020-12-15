@@ -2,6 +2,7 @@ package controller;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.platform.runner.JUnitPlatform;
@@ -19,6 +20,7 @@ public class HomeControllerTest {
 	//private MockMvc mockMvc;
 	
 	@Test
+	@Disabled
 	public void Test() throws Exception {
 		logger.info("Start junit5 test");
 		
@@ -28,6 +30,11 @@ public class HomeControllerTest {
 		
 		//mockMvc.perform(MockMvcRequestBuilders.get("/"))
 			//.andExpect(MockMvcResultMatchers.view().name("home"));
+	}
+	
+	@Test
+	void hello() {
+		System.out.println("Hello world");
 	}
 	
 }
